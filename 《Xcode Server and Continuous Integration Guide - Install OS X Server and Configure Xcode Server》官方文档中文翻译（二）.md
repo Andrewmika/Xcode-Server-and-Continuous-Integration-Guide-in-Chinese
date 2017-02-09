@@ -1,13 +1,13 @@
 * 开始
-  * [使用Xcode进行持续集成](quiver:///notes/B8F910ED-9426-4002-918D-079DEBDADFED)
+  * [关于Xcode中的持续集成](《Xcode Server and Continuous Integration Guide - About Continuous Integration in Xcode》官方文档中文翻译（一）.md)
 * 设置Xcode Server
-   * [安装OS X Server并配置Xcode Server](quiver:///notes/B155FC18-728C-43C3-8B18-90A5BCC53A3C)
-   * [启用对源代码仓库的访问](quiver:///notes/E631BFE3-D44B-415A-AD71-2000EE434F76)
-   * [配置bot以执行持续集成](quiver:///notes/65119961-EEA9-48ED-BDC5-6084BABDAF24)
-   * [Xcode Server环境变量参考](quiver:///notes/D1A19475-8618-4E27-B801-143C7B0DDB01)
+   * [安装OS X Server并配置Xcode Server](《Xcode Server and Continuous Integration Guide - Install OS X Server and Configure Xcode Server》官方文档中文翻译（二）.md)
+   * [启用对源代码仓库的访问](《Xcode Server and Continuous Integration Guide - Enable Access to Your Source Code Repositories》官方文档中文翻译（三）.md)
+   * [配置bot以执行持续集成](《Xcode Server and Continuous Integration Guide - Configure Bots to Perform Continuous Integrations》官方文档中文翻译（四）.md)
+   * [Xcode Server环境变量参考](《Xcode Server and Continuous Integration Guide - Xcode Server Environment Variable Reference》官方文档中文翻译（五）.md)
 * 管理和监测Bot
-   * [从报告导航器管理和监测Bot](quiver:///notes/3BC9417A-D0CC-4BF6-A8C5-DBF427699713)
-   * [从Web浏览器监控Bot](quiver:///notes/C97641EE-3B4E-4BE9-A2CF-39B4FB276DA7)
+   * [从报告导航器管理和监测Bot](《Xcode Server and Continuous Integration Guide - Manage and Monitor Bots from the Report Navigator》官方文档中文翻译（六）.md)
+   * [从Web浏览器监控Bot](《Xcode Server and Continuous Integration Guide - Monitor Bots from a Web Browser》官方文档中文翻译（七）.md)
 
 # 安装OS X Server并配置Xcode Server
 使用Xcode Server之前，您需要在一台Mac上安装并配置OS X Server和Xcode。您可以在开发Mac上编写代码并允许Server在特定计划中、提交代码到源代码仓库时执行您软件产品的集成或者手动集成。
@@ -110,7 +110,7 @@ Xcode Server在本地网络中通过Bonjour进行通信。如果您和其他团�
 4. 选择可以创建和查看bot的成员。
   ![BotPermissions_2x.png](resources/E036E165141A531D1C655700D8140AD8.png)
   如果您在`Bots can be created and viewed by`的弹出菜单栏中选择`all users`，游客和每一个经过身份验证的用户都可以查看、创建、编辑和删除bot以及下载项目。`loged in users`包括所有需要经过身份验证才能访问bot的本地用户和目录用户。单击`only some users`允许您指定现有用户或组。
-5. 如果您选择限制bot的创建，您也可以选择限制只可查看bot的访问。只有查看权限的用户可以访问Xcode Server网站（参阅从_Web浏览器监控Bot_:[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/MonitorBotsandDownloadProductsfromaWebBrowser.html#//apple_ref/doc/uid/TP40013292-CH10-SW1),[中文文档](quiver:///notes/C97641EE-3B4E-4BE9-A2CF-39B4FB276DA7)）并且启动集成，但他们无法创建和管理bot。特别受益于具有只访问bot活动权限的人员是软件测试人员，项目经理和种子协调员。
+5. 如果您选择限制bot的创建，您也可以选择限制只可查看bot的访问。只有查看权限的用户可以访问Xcode Server网站（参阅从_Web浏览器监控Bot_:[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/MonitorBotsandDownloadProductsfromaWebBrowser.html#//apple_ref/doc/uid/TP40013292-CH10-SW1),[中文文档](《Xcode Server and Continuous Integration Guide - Monitor Bots from a Web Browser》官方文档中文翻译（七）.md)）并且启动集成，但他们无法创建和管理bot。特别受益于具有只访问bot活动权限的人员是软件测试人员，项目经理和种子协调员。
 6. 单击`OK`。
 
 ## 设置您的开发Mac访问Xcode Server
@@ -125,7 +125,7 @@ Xcode Server在本地网络中通过Bonjour进行通信。如果您和其他团�
 5. 指定服务器连接凭据，然后单击`Add`。
   ![xcode_add_server_2x.png](resources/890DEE6A0B5339EB35BA264C460FBDC8.png)
   
-  如果服务器成功配置，您可以单击Xcode中Account首选项的服务器地址链接。Safari将会打开并展现服务器托管的bot网站，正如_Web浏览器监控Bot_:[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/MonitorBotsandDownloadProductsfromaWebBrowser.html#//apple_ref/doc/uid/TP40013292-CH10-SW1),[中文文档](quiver:///notes/C97641EE-3B4E-4BE9-A2CF-39B4FB276DA7)所探讨的。
+  如果服务器成功配置，您可以单击Xcode中Account首选项的服务器地址链接。Safari将会打开并展现服务器托管的bot网站，正如_Web浏览器监控Bot_:[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/MonitorBotsandDownloadProductsfromaWebBrowser.html#//apple_ref/doc/uid/TP40013292-CH10-SW1),[中文文档](《Xcode Server and Continuous Integration Guide - Monitor Bots from a Web Browser》官方文档中文翻译（七）.md)所探讨的。
 
 > **备注**
 

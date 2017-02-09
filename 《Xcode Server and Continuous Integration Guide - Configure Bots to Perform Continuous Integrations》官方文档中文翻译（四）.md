@@ -1,13 +1,13 @@
 * 开始
-  * [使用Xcode进行持续集成](quiver:///notes/B8F910ED-9426-4002-918D-079DEBDADFED)
+  * [关于Xcode中的持续集成](《Xcode Server and Continuous Integration Guide - About Continuous Integration in Xcode》官方文档中文翻译（一）.md)
 * 设置Xcode Server
-   * [安装OS X Server并配置Xcode Server](quiver:///notes/B155FC18-728C-43C3-8B18-90A5BCC53A3C)
-   * [启用对源代码仓库的访问](quiver:///notes/E631BFE3-D44B-415A-AD71-2000EE434F76)
-   * [配置bot以执行持续集成](quiver:///notes/65119961-EEA9-48ED-BDC5-6084BABDAF24)
-   * [Xcode Server环境变量参考](quiver:///notes/D1A19475-8618-4E27-B801-143C7B0DDB01)
+   * [安装OS X Server并配置Xcode Server](《Xcode Server and Continuous Integration Guide - Install OS X Server and Configure Xcode Server》官方文档中文翻译（二）.md)
+   * [启用对源代码仓库的访问](《Xcode Server and Continuous Integration Guide - Enable Access to Your Source Code Repositories》官方文档中文翻译（三）.md)
+   * [配置bot以执行持续集成](《Xcode Server and Continuous Integration Guide - Configure Bots to Perform Continuous Integrations》官方文档中文翻译（四）.md)
+   * [Xcode Server环境变量参考](《Xcode Server and Continuous Integration Guide - Xcode Server Environment Variable Reference》官方文档中文翻译（五）.md)
 * 管理和监测Bot
-   * [从报告导航器管理和监测Bot](quiver:///notes/3BC9417A-D0CC-4BF6-A8C5-DBF427699713)
-   * [从Web浏览器监控Bot](quiver:///notes/C97641EE-3B4E-4BE9-A2CF-39B4FB276DA7)
+   * [从报告导航器管理和监测Bot](《Xcode Server and Continuous Integration Guide - Manage and Monitor Bots from the Report Navigator》官方文档中文翻译（六）.md)
+   * [从Web浏览器监控Bot](《Xcode Server and Continuous Integration Guide - Monitor Bots from a Web Browser》官方文档中文翻译（七）.md)
 
 # 配置bot以执行持续集成
 bot是Xcode Server在源代码仓库中对当前版本的项目执行持续集成的进程。bot运行一次就是一次集成。集成包括对定义在Xcode项目中的应用（或其他软件产品）进行构建、分析、测试和归档。当Xcode Server能够访问项目的源代码仓库，你可以配置bot来执行应用的持续集成。
@@ -81,7 +81,7 @@ scheme是Xcode构建系统中重要的一部分。然而，对于使用持续继
 
     > **备注**
   
-    > 除了在此定义的自定义环境变量之外，您还可以在作为集成，预集成触发器和后集成触发器一部分执行的Run Script构建阶段使用Xcode Server的内置环境变量。有关这些变量列表，参见_Xcode Server环境变量参考_：[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/EnvironmentVariableReference.html#//apple_ref/doc/uid/TP40013292-CH14-SW1)，[中文文档](quiver:///notes/D1A19475-8618-4E27-B801-143C7B0DDB01)。
+    > 除了在此定义的自定义环境变量之外，您还可以在作为集成，预集成触发器和后集成触发器一部分执行的Run Script构建阶段使用Xcode Server的内置环境变量。有关这些变量列表，参见_Xcode Server环境变量参考_：[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/EnvironmentVariableReference.html#//apple_ref/doc/uid/TP40013292-CH14-SW1)，[中文文档](《Xcode Server and Continuous Integration Guide - Xcode Server Environment Variable Reference》官方文档中文翻译（五）.md)。
 
   8. bot可以配置为在集成前或集成后执行称为触发器的操作。一个触发器可以运行自定义shell脚本并发送邮件报告。
   
@@ -97,7 +97,7 @@ scheme是Xcode构建系统中重要的一部分。然而，对于使用持续继
 
   9. 单击`Create`来建立bot。
 
-正如在[Manage and Monitor Bots from the Report Navigator](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/view_integration_results.html#//apple_ref/doc/uid/TP40013292-CH4-SW1)（[中文文档](quiver:///notes/3BC9417A-D0CC-4BF6-A8C5-DBF427699713)）所阐述的，使用报告导航器来手动开启、编辑和删除bot。使用Web浏览器来监测bot状态，下载集成文件并安装iOS产品，参见[Monitor Bots from a Web Browser](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/MonitorBotsandDownloadProductsfromaWebBrowser.html#//apple_ref/doc/uid/TP40013292-CH10-SW1)（[中文文档](quiver:///notes/C97641EE-3B4E-4BE9-A2CF-39B4FB276DA7)））。
+正如在[Manage and Monitor Bots from the Report Navigator](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/view_integration_results.html#//apple_ref/doc/uid/TP40013292-CH4-SW1)（[中文文档](《Xcode Server and Continuous Integration Guide - Manage and Monitor Bots from the Report Navigator》官方文档中文翻译（六）.md)）所阐述的，使用报告导航器来手动开启、编辑和删除bot。使用Web浏览器来监测bot状态，下载集成文件并安装iOS产品，参见[Monitor Bots from a Web Browser](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/MonitorBotsandDownloadProductsfromaWebBrowser.html#//apple_ref/doc/uid/TP40013292-CH10-SW1)（[中文文档](《Xcode Server and Continuous Integration Guide - Monitor Bots from a Web Browser》官方文档中文翻译（七）.md)））。
 
 ## 遵循最佳实践
 要利用好产品开发流程中的持续集成，请遵循以下准则：

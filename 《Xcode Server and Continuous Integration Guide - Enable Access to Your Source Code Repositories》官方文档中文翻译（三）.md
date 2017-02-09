@@ -1,17 +1,17 @@
 * 开始
-  * [使用Xcode进行持续集成](quiver:///notes/B8F910ED-9426-4002-918D-079DEBDADFED)
+  * [关于Xcode中的持续集成](《Xcode Server and Continuous Integration Guide - About Continuous Integration in Xcode》官方文档中文翻译（一）.md)
 * 设置Xcode Server
-   * [安装OS X Server并配置Xcode Server](quiver:///notes/B155FC18-728C-43C3-8B18-90A5BCC53A3C)
-   * [启用对源代码仓库的访问](quiver:///notes/E631BFE3-D44B-415A-AD71-2000EE434F76)
-   * [配置bot以执行持续集成](quiver:///notes/65119961-EEA9-48ED-BDC5-6084BABDAF24)
-   * [Xcode Server环境变量参考](quiver:///notes/D1A19475-8618-4E27-B801-143C7B0DDB01)
+   * [安装OS X Server并配置Xcode Server](《Xcode Server and Continuous Integration Guide - Install OS X Server and Configure Xcode Server》官方文档中文翻译（二）.md)
+   * [启用对源代码仓库的访问](《Xcode Server and Continuous Integration Guide - Enable Access to Your Source Code Repositories》官方文档中文翻译（三）.md)
+   * [配置bot以执行持续集成](《Xcode Server and Continuous Integration Guide - Configure Bots to Perform Continuous Integrations》官方文档中文翻译（四）.md)
+   * [Xcode Server环境变量参考](《Xcode Server and Continuous Integration Guide - Xcode Server Environment Variable Reference》官方文档中文翻译（五）.md)
 * 管理和监测Bot
-   * [从报告导航器管理和监测Bot](quiver:///notes/3BC9417A-D0CC-4BF6-A8C5-DBF427699713)
-   * [从Web浏览器监控Bot](quiver:///notes/C97641EE-3B4E-4BE9-A2CF-39B4FB276DA7)
+   * [从报告导航器管理和监测Bot](《Xcode Server and Continuous Integration Guide - Manage and Monitor Bots from the Report Navigator》官方文档中文翻译（六）.md)
+   * [从Web浏览器监控Bot](《Xcode Server and Continuous Integration Guide - Monitor Bots from a Web Browser》官方文档中文翻译（七）.md)
 
 # 启用对源代码仓库的访问
 Xcode Server对包含在源代码仓库中的项目进行操作。Xcode Server支持两种主流的源代码控制系统：Git和Subversion。您的bot可以连接到托管在远程服务器上的或者设置并托管在OS X Server上的Git和Subversion。
-如果您目前还没有设置Xcode Server ,请参照_安装OS X Server并配置Xcode Server_：[ 官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW1)，[中文文档](quiver:///notes/B155FC18-728C-43C3-8B18-90A5BCC53A3C)。
+如果您目前还没有设置Xcode Server ,请参照_安装OS X Server并配置Xcode Server_：[ 官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW1)，[中文文档](《Xcode Server and Continuous Integration Guide - Install OS X Server and Configure Xcode Server》官方文档中文翻译（二）.md)。
 
 > **备注**
 
@@ -58,7 +58,7 @@ SSH加密凭据和事务，通常比HTTPS简单，因为它始终是安全的并
 - [Git on the Server - The Protocols](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
 
 ## 从您的开发Mac上连接到远程仓库
-如果您的项目在远程服务器上的Git或Subversion仓库中，您可以可以在您的开发Mac中Xcode里的`Account`首选项中保存这些凭据。之后当你需要访问这些仓库时，您不必每次再去输入凭据。当Xcode Server执行项目集成时，它必须能够访问相应项目的源代码仓库。你在设置bot时需要提供这些凭据，正如_配置bot以执行持续集成_：[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/ConfigureBots.html#//apple_ref/doc/uid/TP40013292-CH9-SW1)，[中文文档](quiver:///notes/65119961-EEA9-48ED-BDC5-6084BABDAF24)所述。
+如果您的项目在远程服务器上的Git或Subversion仓库中，您可以可以在您的开发Mac中Xcode里的`Account`首选项中保存这些凭据。之后当你需要访问这些仓库时，您不必每次再去输入凭据。当Xcode Server执行项目集成时，它必须能够访问相应项目的源代码仓库。你在设置bot时需要提供这些凭据，正如_配置bot以执行持续集成_：[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/ConfigureBots.html#//apple_ref/doc/uid/TP40013292-CH9-SW1)，[中文文档](《Xcode Server and Continuous Integration Guide - Configure Bots to Perform Continuous Integrations》官方文档中文翻译（四）.md)所述。
 
 **添加一个远程仓库的验证凭据到开发Mac**
 
@@ -91,7 +91,7 @@ SSH加密凭据和事务，通常比HTTPS简单，因为它始终是安全的并
 如果你允许HTTPS访问，任何人通过HTTPS访问托管仓库都将会在Xcode中弹出证书提示框。为了从您的开发Mac中访问仓库，当弹出证书提示框时单击`Show Certificate`，选择`Always Trust`选项，然后单击`Continue`，参照图3-1。
   ![图3-1 信任托管仓库身份](resources/A8650727F2DE01D94520F7687B08122A.png)
 
-如果您和开发团队工作，您可以提供给他们在服务器上访问仓库的账户（正如[Set Up Xcode Server for Team Members](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW5)（[中文文档](quiver:///notes/B155FC18-728C-43C3-8B18-90A5BCC53A3C)）中所述）。
+如果您和开发团队工作，您可以提供给他们在服务器上访问仓库的账户（正如[Set Up Xcode Server for Team Members](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW5)（[中文文档](《Xcode Server and Continuous Integration Guide - Install OS X Server and Configure Xcode Server》官方文档中文翻译（二）.md)）中所述）。
 
 ### 从你的开发Mac中Clone本地仓库到Server中
 如果您使用开发Mac中的本地Git仓库，您需要clone这些仓库到运行Xcode Server的服务器上，从而允许bot操作这些仓库。
@@ -117,7 +117,7 @@ SSH加密凭据和事务，通常比HTTPS简单，因为它始终是安全的并
   
     您的本地仓库已复制到服务器中。
 
-如果您和一个开发团队一起工作，您可以向他们提供服务器上的帐号用来共享您的仓库，正如[Set Up Xcode Server for Team Members](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW5)（[中文文档](quiver:///notes/B155FC18-728C-43C3-8B18-90A5BCC53A3C)）所述。
+如果您和一个开发团队一起工作，您可以向他们提供服务器上的帐号用来共享您的仓库，正如[Set Up Xcode Server for Team Members](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW5)（[中文文档](《Xcode Server and Continuous Integration Guide - Install OS X Server and Configure Xcode Server》官方文档中文翻译（二）.md)）所述。
 
 ### 创建项目并托管仓库到Server
 当您在开发Mac上创建一个新的项目，您可以同时为其直接在服务器上创建一个仓库。
@@ -138,7 +138,7 @@ SSH加密凭据和事务，通常比HTTPS简单，因为它始终是安全的并
     如果服务器并没有出现在列表上，查看或者请求服务器管理员查看Xcode Server的`Repositories`面板以查看您是否有权限创建仓库。根据Xcode Server的配置方式，托管存储库可以通过登录用户、任何人或者指定用户创建。
   8. 单击`Create`。
   
-In OS X Server,项目名称将会显示在Xcode Server的托管仓库列表上。如果您和开发团队工作，您可以提供给他们账户来共享仓库（正如[Set Up Xcode Server for Team Members](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW5)（[中文文档](quiver:///notes/B155FC18-728C-43C3-8B18-90A5BCC53A3C)）中所述）。
+In OS X Server,项目名称将会显示在Xcode Server的托管仓库列表上。如果您和开发团队工作，您可以提供给他们账户来共享仓库（正如[Set Up Xcode Server for Team Members](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW5)（[中文文档](《Xcode Server and Continuous Integration Guide - Install OS X Server and Configure Xcode Server》官方文档中文翻译（二）.md)）中所述）。
 
 ### 在运行Xcode Server的OS X Server上创建Git仓库并通过您开发Mac访问
 您也可以直接在运行Xcode Server的OS X Server上创建可共享的Git仓库。您和您的团队成员可以将项目和bot指向这些仓库。
@@ -160,7 +160,7 @@ In OS X Server,项目名称将会显示在Xcode Server的托管仓库列表上�
   6. 如果您想开启HTTPS访问，请勾选"Allow logged in users to read and write"。
   7. 单击`Create`
   
-    新的仓库会显示在托管仓库列表。如果您想之后更改用户访问权限，从托管仓库列表上选中对应仓库并单击`Edit`按钮。您可以通过在Mac上的Xcode中使用“帐户”首选项，将此存储库的凭据添加到开发Mac。如果您和开发团队工作，您可以提供给他们账户来共享仓库（正如[Set Up Xcode Server for Team Members](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW5)（[中文文档](quiver:///notes/B155FC18-728C-43C3-8B18-90A5BCC53A3C)）中所述）。
+    新的仓库会显示在托管仓库列表。如果您想之后更改用户访问权限，从托管仓库列表上选中对应仓库并单击`Edit`按钮。您可以通过在Mac上的Xcode中使用“帐户”首选项，将此存储库的凭据添加到开发Mac。如果您和开发团队工作，您可以提供给他们账户来共享仓库（正如[Set Up Xcode Server for Team Members](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW5)（[中文文档](《Xcode Server and Continuous Integration Guide - Install OS X Server and Configure Xcode Server》官方文档中文翻译（二）.md)）中所述）。
 
 如果您有一个本地开发Mac上存在的Git仓库项目，您可以将其连接到运行Xcode Server的OS X Server上的存储库。使用这种方式，您可以在您提交代码后推送更改到服务器上。
 

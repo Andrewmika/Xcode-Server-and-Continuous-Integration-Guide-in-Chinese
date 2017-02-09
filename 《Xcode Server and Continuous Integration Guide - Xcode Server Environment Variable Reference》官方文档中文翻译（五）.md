@@ -1,0 +1,187 @@
+* 开始
+  * [使用Xcode进行持续集成](quiver:///notes/B8F910ED-9426-4002-918D-079DEBDADFED)
+* 设置Xcode Server
+   * [安装OS X Server并配置Xcode Server](quiver:///notes/B155FC18-728C-43C3-8B18-90A5BCC53A3C)
+   * [启用对源代码仓库的访问](quiver:///notes/E631BFE3-D44B-415A-AD71-2000EE434F76)
+   * [配置bot以执行持续集成](quiver:///notes/65119961-EEA9-48ED-BDC5-6084BABDAF24)
+   * [Xcode Server环境变量参考](quiver:///notes/D1A19475-8618-4E27-B801-143C7B0DDB01)
+* 管理和监测Bot
+   * [从报告导航器管理和监测Bot](quiver:///notes/3BC9417A-D0CC-4BF6-A8C5-DBF427699713)
+   * [从Web浏览器监控Bot](quiver:///notes/C97641EE-3B4E-4BE9-A2CF-39B4FB276DA7)
+
+# Xcode Server环境变量参考
+Xcode Server定义了许多内置环境变量，您可以在`Run Script`构建阶段使用这些变量，作为集成、预集成触发器和后集成触发器的一部分。当进行Xcode Server API请求时这些变量提供的信息将非常有用。有关Xcode Server API的信息，参见[ Xcode Server API Reference](https://developer.apple.com/library/content/documentation/Xcode/Conceptual/XcodeServerAPIReference/index.html#//apple_ref/doc/uid/TP40016472)。
+
+  > **备注**
+
+  > 除了内建的Xcode Server环境变量，您也可以在配置bot时自定义环境变量。 
+  
+  <html>
+ <head></head>
+ <body>
+  <table class="graybox" border="0" cellspacing="0" cellpadding="5"> 
+   <caption class="tablecaption">
+    <strong class="caption-number">表5-1</strong>Xcode Server环境变量参考
+   </caption> 
+   <thead> 
+    <tr> 
+     <th scope="col" class="TableHeading_TableRow_TableCell"><p class="para"> 变量 </p></th> 
+     <th scope="col" class="TableHeading_TableRow_TableCell"><p class="para"> 可用性 </p></th> 
+     <th scope="col" class="TableHeading_TableRow_TableCell"><p class="para"> 描述 </p></th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 变量值永远为 <code class="code-voice">1</code>。脚本可以检查此值以确定它是否在Xcode Server的上下文中运行。</p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_BOT_NAME</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p><iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe></td> 
+     <td><p class="para"> 正在运行的bot的名称。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_BOT_ID</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> Bot的ID。 可被用在Xcode Server API请求中。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_BOT_TINY_ID</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> bot ID的短版本。一些Xcode Server API请求会使用这个信息。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_INTEGRATION_ID</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 集成的ID。 可被用在Xcode Server API请求中。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_INTEGRATION_TINY_ID</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 集成的ID的短版本。一些Xcode Server API请求会使用这个信息。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_INTEGRATION_NUMBER</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 集成所运行的次数。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_INTEGRATION_RESULT</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 表示集成结果的字符串，例如， <code class="code-voice">成功</code>、 <code class="code-voice">测试失败</code>、 <code class="code-voice">构建错误</code>、 和 <code class="code-voice">取消集成</code>。 这些变量用于后集成触发器。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_SOURCE_DIR</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td>
+     <td><p class="para"> Xcode Server包含源码仓库的顶级目录。对于存储库本身的路径， 参考 <code class="code-voice">XCS_PRIMARY_REPO_DIR</code>. </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_OUTPUT_DIR</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 集成期间存储的资源（包括日志和产品）的顶级目录。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_DERIVED_DATA_DIR</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 派生的数据目录。 Xcode Server建立在非标准位置，因此这个目录是bot特定的。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_XCODEBUILD_LOG</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 在集成期间运行xcodebuild命令生成的输出文件的路径。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_ARCHIVE</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> <code class="code-voice">.xarchive</code> 文件路径（如果集成期间执行了归档的话）。</p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_PRODUCT</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"><code class="code-voice">.app</code>、 <code class="code-voice">.ipa</code>、 或 <code class="code-voice">.package</code> 文件路径（如果集成期间从归档中输出了产品的话）。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_ERROR_COUNT</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 集成期间产生的错误总数 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_ERROR_CHANGE</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 相对于上次集成产生的错误数值的改变。该值可以为负。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_WARNING_COUNT</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 集成期间产生的警告总数。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_WARNING_CHANGE</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 相对于上次集成产生的警告数值的改变。该值可以为负。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_ANALYZER_WARNING_COUNT</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 集成期间产生的静态分析警告总数。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_ANALYZER_WARNING_CHANGE</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 相对于上次集成产生的静态分析警告数值的改变。该值可以为负。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_TEST_FAILURE_COUNT</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 集成期间产生的测试失败总数。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_TEST_FAILURE_CHANGE</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 相对于上次集成产生的测试失败数值的改变。该值可以为负。</p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_TESTS_COUNT</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 集成执行的测试总数。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_TESTS_CHANGE</code> </p></td> 
+     <td><p class="para"> Xcode 7和更高版本 </p></td> 
+     <td><p class="para"> 相对于上次集成执行的测试数值的改变。该值可以为负。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_THINNED_PRODUCTS_PLIST</code> </p></td> 
+     <td><p class="para"> Xcode 8和更高版本 </p></td> 
+     <td>描述对<code class="code-voice">.ipa</code>进行『瘦身』的属性列表文件 (<code class="code-voice">.plist</code>) 及其变体的导出路径。此属性列表文件仅在执行app『瘦身』时存在。</td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_THINNED_PRODUCTS_PATH</code> </p></td> 
+     <td><p class="para"> Xcode 8和更高版本 </p></td> 
+     <td><p class="para"> 包含在集成期间导出的『瘦身』的 <code class="code-voice">.ipa</code> 文件目录</p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_PRIMARY_REPO_DIR</code> </p></td> 
+     <td><p class="para"> Xcode 8和更高版本 </p></td> 
+     <td><p class="para"> 正在集成的Xcode项目或工作空间的源代码存储库的路径。 对于包含Xcode Server的源代码存储库的父目录，请参阅<code class="code-voice">XCS_SOURCE_DIR</code>. </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_PRIMARY_REPO_BRANCH</code> </p></td> 
+     <td><p class="para"> Xcode 8和更高版本 </p></td> 
+     <td><p class="para"> 主源代码仓库分支，用于签出要集成的项目或工作空间。仅在签出分支时使用。</p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_PRIMARY_REPO_TAG</code> </p></td> 
+     <td><p class="para"> Xcode 8和更高版本 </p></td> 
+     <td><p class="para"> 主源代码仓库标签，用于签出要集成的项目或工作空间。仅在签出分支时使用。 </p></td> 
+    </tr> 
+    <tr> 
+     <td scope="row"><p class="para"> <code class="code-voice">XCS_PRIMARY_REPO_REVISION</code> </p></td> 
+     <td><p class="para"> Xcode 8和更高版本 </p></td> 
+     <td><p class="para"> 提交的SVN修订版本号或Git哈希值，用于签出主源代码存储库之外的要集成的项目或工作空间。 仅在不签出分支或标记时使用。 </p></td> 
+    </tr> 
+   </tbody> 
+  </table>
+ </body>
+</html>

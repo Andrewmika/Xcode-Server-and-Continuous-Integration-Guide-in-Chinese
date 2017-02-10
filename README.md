@@ -2,6 +2,8 @@
 
 使用Xcode Server进行持续集成。
 
+[GitBook地址](https://www.gitbook.com/book/andrewmika/-xcode-server-and-continuous-integration-guide/details)
+
 [官方英文原版](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/#//apple_ref/doc/uid/TP40013292-CH1-SW1)
 
 ## 前言
@@ -20,7 +22,6 @@
 * 管理和监测Bot
   * [从报告导航器管理和监测Bot](6.md)
   * [从Web浏览器监控Bot](7.md)
-
 
 ## 译者
 [小小厨师](http://iandrew.space),[简书](http://www.jianshu.com/u/acd83aa0fb88)

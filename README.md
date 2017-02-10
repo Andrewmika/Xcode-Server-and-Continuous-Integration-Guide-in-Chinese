@@ -23,6 +23,6 @@
 
 
 ## 译者
-[小小厨师](iandrew.space),[简书](http://www.jianshu.com/u/acd83aa0fb88)
+[小小厨师](http://iandrew.space),[简书](http://www.jianshu.com/u/acd83aa0fb88)
 
 

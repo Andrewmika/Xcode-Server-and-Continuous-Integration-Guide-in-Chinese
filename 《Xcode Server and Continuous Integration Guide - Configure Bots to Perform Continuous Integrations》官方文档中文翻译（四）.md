@@ -33,7 +33,9 @@ bot也会在您安装或更新新版本Xcode时自动运行集成。这些集成
   1. 在您的开发Mac上，check out并打开您想共享scheme的项目。
   2. 选择`Product > Scheme > Manage Schemes`。
   3. 勾选要进行共享的scheme的`Shared`勾选框。
+  
     ![xcode_scheme_sharing_2x.png](resources/260BB90BC94993B89D41779331CD0932.png)
+    
   4. 选择`Source Control > Commit`。
   5. 勾选`Shared Data`文件夹。
   6. 在输入栏中输入提交信息。
@@ -49,14 +51,19 @@ scheme是Xcode构建系统中重要的一部分。然而，对于使用持续继
 
   1. 在你的开发Mac上，打开包含定义自动化操作的scheme的Xcode项目。
   2. 选择`Product > Create Bot`，为bot指定一个名称，选择一个服务器，单击`Next`。
+  
     ![xcode_create_bot_attributes_dialog_2x.png](resources/2658B09E7A7B2E4C8916CD5DD554D643.png)
+    
   3. 选择一个仓库并点击`Sign In`来提供仓库的凭据，即使您已经在Xcode首选项中添加过，因为每个bot会在服务器上的钥匙串中保存一份自己的凭据。
+  
     ![xcode_bot_config_repository_permissions_2x.png](resources/75201875F7E373B3EDFBF16D9CFD326C.png)
     
     当提示框弹出时输入您的身份验证凭据，然后点击`OK`。
+    
     ![xcode_bot_config_repository_authentication_2x.png](resources/B7985CE4E0BFA85B6637E9895E234741.png)
     
   4. 配置bot需要的属性，单击`Next`。
+  
     ![xcode_create_bot_configuration_dialog_2x.png](resources/F001C3EF89EEC1EA0B7BA69B2BEB48DB.png)
     
     - 选择一个scheme并表明是否通过项目的源代码仓库共享scheme。
@@ -71,12 +78,17 @@ scheme是Xcode构建系统中重要的一部分。然而，对于使用持续继
   5. 指定集成计划，单击`Next`。
   
     您可以安排bot定期（每小时、每天或每周）、每次提交或手动集成。
+    
     ![xcode_create_bot_schedule_dialog_2x.png](resources/3F1D4D176BBCD4519D713DC46C88B6EB.png)
+    
   6. 对于iOS应用，选择bot使用哪种设备或模拟器执行测试，单击`Next`。
   
     您指定的所有设备必须连接到服务器上才能完成测试操作。
+    
     ![xcode_create_bot_devices_dialog_2x.png](resources/DB5447A1192BFE8B3DAC8CCB3213586D.png)
+    
   7. 定义`Run Script`构建阶段所需的任何环境变量，它们作为集成的一部分执行，或用于预集成和后集成触发器，然后单击“Next”。
+  
     ![xcode_create_bot_environmentvariables_dialog_2x.png](resources/8BCBA97EDA526252FF88CA0DE04683D0.png)
 
     > **备注**
@@ -86,13 +98,19 @@ scheme是Xcode构建系统中重要的一部分。然而，对于使用持续继
   8. bot可以配置为在集成前或集成后执行称为触发器的操作。一个触发器可以运行自定义shell脚本并发送邮件报告。
   
     - 预集成触发器在集成前执行。要创建预集成脚本，在脚本面板底部单击添加按钮（+）并从弹出菜单中选择`Pre-Integration Script`。输入想要的脚本到脚本面板。此脚本可以引用您在先前配置步骤中定义的任何环境变量。它还可以引用Xcode内置的环境变量。
+    
       ![xcode_create_bot_triggers-preintegration_dialog_2x.png](resources/CC2DDEFBCC77F86B60193CFDD9A87CF1.png)
+      
     - 后集成触发器在集成完成后运行。要创建后集成脚本，在脚本面板底部单击添加按钮（+）并从弹出菜单中选择`Post-Integration Script`。输入想要的脚本到脚本面板。此脚本可以引用您在先前配置步骤中定义的任何环境变量。它还可以引用Xcode内置的环境变量。后集成触发器可以配置为有条件地运行，例如成功、测试失败、构建错误、构建警告或静态分析警告时。为您的集成勾选合适条件的复选框。
+    
       ![xcode_create_bot_triggers-postintegration_dialog_2x.png](resources/32E1CFF5EF0270DC2C8F23786195464D.png)
+      
     - 邮件通知触发器在有新问题出现时、执行集成后、每天或每周执行。要创建邮件通知触发器，在脚本面板底部单击添加按钮（+）并从弹出菜单中选择`Email Notification`。指定仅有新问题出现时通知还是定期汇总报告。新问题报告会提交给提交者。对于摘要报告，您必须指定收件人。选择要包括的信息以及发送报告的条件，例如成功，测试失败，构建错误，构建警告或静态分析警告时。
+    
       ![xcode_create_bot_triggers-email_dialog_2x.png](resources/D7C4C7B4807EB03D6B5AA5C31A4E731C.png)
       
     以下屏幕截图显示了每日摘要报告的电子邮件通知的示例。
+    
     ![emailreport_2x.png](resources/5F2B0B2B8856DC76572F5A8FD0CE70E4.png)
 
   9. 单击`Create`来建立bot。

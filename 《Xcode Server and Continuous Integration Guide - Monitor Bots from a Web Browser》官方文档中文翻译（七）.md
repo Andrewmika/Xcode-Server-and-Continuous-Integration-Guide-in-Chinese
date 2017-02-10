@@ -15,12 +15,19 @@
 **指定谁可以查看和使用bot网站**
 
   1. 在Server的侧边栏服务列表上，选择Xcode。
+  
     ![ServicesSidebar_2x.png](resources/FA6F1209716C9E001AFC404522730A50.png)
+    
   2. 在Xcode面板上，单击`Settings`标签。
+  
     ![server_xcode_settings_tab_2x.png](resources/2DFDC71A4B899839AEF0FA691194ADBA.png)
+    
   3. 单击`Edit Permissions`。
+  
     ![server_xcode_settings_tab_editpermissions_2x.png](resources/1A76E5DEB4A802A38D1E27EE2C88407B.png)
+    
   4. 当对话框出现时，指定谁可以创建和查看bot，还有下载归档和产品。
+  
     ![BotPermissions_2x (1).png](resources/E036E165141A531D1C655700D8140AD8.png)
     
     - 如果您从弹出菜单中选择"all users"，所有访问网站的访问者都可以查看bot并下载项目。
@@ -35,6 +42,7 @@
 要查看bot网站，在web浏览器中导航至地址_hostname/xcode/_,_hostname_是服务器的网络域名（比如`server.mycompany.com`）或者其本地主机名（比如`server.local`）。根据在Xcode Server中配置的查看权限，可能会提示您使用本地或Open Directory账户凭据登录。
 
 bot主页（图7-1）显示了在服务器上运行的bot的最近的集成摘要列表。
+
 ![图7-1 bot网站](resources/32FFEF5B6427DA6DF586F3B032645A28.png)
 
 bot网站也可以从Server应用中访问。
@@ -42,10 +50,15 @@ bot网站也可以从Server应用中访问。
 **从OS X Server应用中访问bot网站**
 
   1. 在Server的侧边栏服务列表上，选择Xcode。
+  
     ![ServicesSidebar_2x.png](resources/FA6F1209716C9E001AFC404522730A50.png)
+    
   2. 在Xcode面板上，单击`Settings`标签。
+  
     ![server_xcode_settings_tab_2x.png](resources/2DFDC71A4B899839AEF0FA691194ADBA.png)
+    
   3. 在设备列表下方，点击"View bots"按钮。
+  
     ![server_xcode_settings_tab_devices_table_view_bots_button_2x.png](resources/89ECD3C7BB7BF66DC3AB2B184CF467EE.png)
     
     web浏览器将会打开并跳转到bot网站。
@@ -55,13 +68,16 @@ bot网站也可以从Server应用中访问。
 **从报告导航器中访问bot网站**
   
   1. 在您开发Mac的Xcode中，选择`View > Navigators > Show Report Navigator`。
+  
     ![xcode_report_navigator_sidebar_2x.png](resources/4C318B7BDCF1C946D87B2126854B507E.png)
+    
   2. 在报告导航器顶部点击`By Group`。
   
     ![xcode_report_navigator_by_group_button_2x.png](resources/2EBEB60008F99307FAD694D629D3F008.png)
     
     所有的集成都通过bot名称进行分组。
   3. 在报告导航器中按住`Control`点击bot，从快捷菜单中选择`View Bot in Browser`。
+  
     ![xcode_report_navigator_view_bot_in_browser_contextual_menu_2x.png](resources/40337B8039D614A343CAA9247B62D149.png)
     
     web浏览器将会打开并跳转到bot网站。
@@ -69,6 +85,7 @@ bot网站也可以从Server应用中访问。
 **从bot网站上登出**
 
   - 在bot主页左上角点击`Log Out`按钮。
+  
     ![bots_website_logout_2x.png](resources/EAC05AE870DC62037F7B5CBDDFA81F63.png)
 
 ## 从bot网站上监测Bot
@@ -78,6 +95,7 @@ bot网站也可以从Server应用中访问。
   
   1. 在bot主页的标题中心单击过滤按钮。
   2. 从弹出菜单中选择需要的条件来过滤集成列表。
+  
     ![bots_website_filtering_2x.png](resources/67507F9574268C538091656783503B21.png)
     
     - _Latest_显示每个bot最近完成的集成。
@@ -90,11 +108,13 @@ bot网站也可以从Server应用中访问。
 **查看bot的集成结果**
 
   - 在bot主页的列表上点击bot或集成的名称。
+  
     ![bots_website_integration_detail_2x.png](resources/4F903B07C14B3F6D2B653DFDE26D4442.png)
     
     将会显示由bot执行的最近集成的摘以及提交。
     
     您可以点击标记按钮来标记一个特定的集成以作区分，例如，作为发布候选版本。标记的意义取决于您和您的组织。
+    
     ![bots_website_integration_flag_2x.png](resources/7CCA63B774C985AC87046A0D2DDE7776.png)
 
 ## 从Bot网站打开Xcode中的bot
@@ -104,7 +124,9 @@ bot网站提供了一个途径来快速打开您开发Mac上Xcode中的bot。
 
   1. 当在您的开发Mac中查看bot网站时，单击bot主页列表上任意的bot或集成。您的浏览器窗口将会显示bot最近执行的集成的摘要。
   2. 点击"Open in Xcode"链接。
+  
     ![bots_website_open_in_xcode_button_2x.png](resources/4D14A7985A6BC22F752AB4588AA581E2.png)
+    
     Xcode将会打开这个bot。
 
 ## 从bot网站上下载集成文件
@@ -114,12 +136,14 @@ bot网站有助于向测试人员和其他团队成员分发产品文件，构�
 
   1. 点击bot主页列表上任意的bot或集成名称。您的浏览器窗口将会显示bot最近执行的集成的摘要。
   2. 点击`Download`链接来下载集成的日志和文件。
+  
     ![bots_website_download_button_2x.png](resources/6AE2B9A1A5481055E780300BA4BA20E9.png)
 
 **在OS X中下载集成的归档**
 
   1. 点击bot主页列表上任意的bot或集成名称。您的浏览器窗口将会显示bot最近执行的集成的摘要。
   2. 如果可用，点击`Archive`链接，下载产品的归档文件（Xcode项目）。
+  
     ![bots_website_archive_button_2x.png](resources/DA134E0344CF89713855CB74B016F5BD.png)
     
   如果集成没有包含`Archive`链接，集成则未带有归档文件。
@@ -128,6 +152,7 @@ bot网站有助于向测试人员和其他团队成员分发产品文件，构�
 
   1. 点击bot主页列表上任意的bot或集成名称。您的浏览器窗口将会显示bot最近执行的集成的摘要。
   2. 如果可用，点击`Product`链接，下载产品的产品（应用程序）。
+  
     ![bots_website_product_button_2x.png](resources/005D3B9A4ECA2571FF609E1E9BA1E190.png)
     
   如果集成没有包含`Production`链接，集成则未带有产品文件。
@@ -139,6 +164,7 @@ bot网站有助于向测试人员和其他团队成员分发产品文件，构�
 
   1. 点击bot主页列表上任意的bot或集成名称。您的浏览器窗口将会显示bot最近执行的集成的摘要。
   2. 点击蓝色安装按钮来安装集成的应用。
+  
     ![bots_website_install_profile_button_2x.png](resources/B1456FA0325DCA0A37C474EC46DCFEC5.png)
     
   当您安装好配置文件后，安装按钮的颜色会从蓝色变为绿色，表明现在可以安装产品。
@@ -146,6 +172,7 @@ bot网站有助于向测试人员和其他团队成员分发产品文件，构�
 **在iOS设备上安装集成的产品（应用程序）**
 
   - 当安装好集成的配置文件后（参考以上说明），单击绿色安装按钮来安装产品。
+  
     ![bots_website_install_app_button_2x.png](resources/B935E586090C806BA170946C8C0D8A33.png)
 
 ## 在Big Screen上查看您的bot
@@ -157,6 +184,7 @@ bot网站有助于向测试人员和其他团队成员分发产品文件，构�
 
   - 显示`Big Screen`网站——_hostname/xcode/bigscreen_，_hostname_是服务器的网络域名（比如`server.mycompany.com`）或者其本地主机名（比如`server.local`）。
   - 点击bot主页右上角的`Big Screen`按钮。
+  
     ![bots_website_big_screen_button_2x.png](resources/6546817AFD494FACB5D56D67AFA733DA.png)
 
 网页可以全屏，也可以通过AirPlay镜像显示。`Big Screen`循环显示所有服务器的bot，每个bot只显示最相关的状态信息。bot列表及其最近完成的结果显示在左侧。对于正在循环的bot将会显示错误、警告、提交和测试数量。通过加号（+）或减号（-）来标识相对于之前集成数量的增加和减少。

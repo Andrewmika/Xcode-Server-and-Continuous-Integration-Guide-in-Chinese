@@ -77,18 +77,24 @@ SSH加密凭据和事务，通常比HTTPS简单，因为它始终是安全的并
 
   1. 在Server应用侧边栏上的服务列表中，选择Xcode。
   2. 单击`Repositories`,您将看到像下图这样的内容。
+  
     ![server_xcode_repositories_tab_2x.png](resources/B2B23A5FE8C578E06C68A2AAB22028B4.png)
+    
   3. 单击`Edit Repository Access`来配置使用哪种协议来访问托管仓库。
+  
     ![server_repository_access_2x.png](resources/5CFB83953B34E9A1F5506C1D6BC09A05.png)
     
     默认HTTPS是被勾选的。
     
     您也可以选择SSH。如果你选择SSH,Xcode Server会显示一个对话框询问是否允许使用SSH来远程登录。单击`Allow`。
   4. 单击`Edit Repository Creators`来选择可以创建拖管仓库的用户。
+  
     ![server_repository_permissions_2x.png](resources/DD61DB07ADEDAD5054991DC79CB21EA9.png)
+    
   5. 在你开发Mac中Xcode的`Accounts`首选项中，添加服务器的账户凭据（如果您还未添加的话）。
 
 如果你允许HTTPS访问，任何人通过HTTPS访问托管仓库都将会在Xcode中弹出证书提示框。为了从您的开发Mac中访问仓库，当弹出证书提示框时单击`Show Certificate`，选择`Always Trust`选项，然后单击`Continue`，参照图3-1。
+
   ![图3-1 信任托管仓库身份](resources/A8650727F2DE01D94520F7687B08122A.png)
 
 如果您和开发团队工作，您可以提供给他们在服务器上访问仓库的账户（正如[Set Up Xcode Server for Team Members](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/adopt_continuous_integration.html#//apple_ref/doc/uid/TP40013292-CH3-SW5)（[中文文档](《Xcode Server and Continuous Integration Guide - Install OS X Server and Configure Xcode Server》官方文档中文翻译（二）.md)）中所述）。
@@ -99,13 +105,18 @@ SSH加密凭据和事务，通常比HTTPS简单，因为它始终是安全的并
 **<p id = "clone">clone一个本地仓库到运行Xcode server的服务器</p>**
 
   1. 在您的开发Mac上，打开项目并选择`Source Control > _ProjectName - BranchName_ > Configure _ProjectName_`。
+  
     ![xcode_configure_repository_2x.png](resources/564DAD1001F24AB4D0504401834B5827.png)
+    
   2. 单击`Remotes`。
   3. 单击添加按钮（+）。
   4. 选择`Create New Remote`。
+  
     ![xcode_create_remote_repository_2x.png](resources/A6760420C19E91387129F28A650C4D58.png)
+    
   5. 选择运行Xcode Server的OS X Server。
   6. 输入远端仓库的名字。
+  
     ![xcode_create_remote_repository2_2x.png](resources/CF02D0088CD49F1F5662838072552D73.png)
     
     使用一个名字来帮助您区分仓库。当您需要选择仓库时，这些名字将会显示在您开发Mac上的`Remotes`列表上。例如，当您从`Source Control`菜单栏上选择`Push`或`Commit`时，名称将会显示在弹出的菜单上让您可以辨别远端仓库。
@@ -113,6 +124,7 @@ SSH加密凭据和事务，通常比HTTPS简单，因为它始终是安全的并
   
     clone过的仓库会显示在OS X Server中的Xcode Server的`Repositories`列表上。
     ![server_xcode_repositories_tab_repositories_table_2x.png](resources/D34EBB64AD08B6215CB1FA7053644A86.png)
+    
   8. 单击`Done`。
   
     您的本地仓库已复制到服务器中。
@@ -133,6 +145,7 @@ SSH加密凭据和事务，通常比HTTPS简单，因为它始终是安全的并
   5. 指定项目本地工作副本位置。
   6. 对于`Source Control`选项，选择`Create git repository on.`。
   7. 通过弹出的菜单窗口选择使用哪个服务器托管仓库。
+  
     ![ChooseRemoteGit_2x.png](resources/B5A66BB77A0AB98766EDA3C15F8105AE.png)
     
     如果服务器并没有出现在列表上，查看或者请求服务器管理员查看Xcode Server的`Repositories`面板以查看您是否有权限创建仓库。根据Xcode Server的配置方式，托管存储库可以通过登录用户、任何人或者指定用户创建。
@@ -149,6 +162,7 @@ In OS X Server,项目名称将会显示在Xcode Server的托管仓库列表上�
   2. 单击`Repositories`。
   3. 单击添加按钮（+）。
   4. 输入仓库名称。
+  
     ![server_create_repository_2x.png](resources/7FE3FECC6726822B7BB810EB0FA18A29.png)
     
     使用一个名称将会帮助您区分仓库。此名称将会显示在Server应用程序中Xcode Server设置下的托管存储库列表中，并将作为访问URL的一部分。
@@ -170,15 +184,20 @@ In OS X Server,项目名称将会显示在Xcode Server的托管仓库列表上�
   2. 单击`Remotes`。
   3. 单击添加按钮（+）。
   4. 选择`Add Remote`。
+  
     ![xcode_add_remote_2x.png](resources/F0F307BA45D2D0AF49A74C9F589020FA.png)
+    
   5. 输入远端仓库的名称和地址。
+  
     ![xcode_add_remote2_2x.png](resources/F3A40135FE7B1749AB7C8DC651C5D38A.png)
+    
     您可以在Xcode Server的仓库列表中找到远端仓库地址。
   6. 单击`Add Remote`。
   7. 单击`Done`。
 
 ### 推送提交到Server上的托管仓库
 将开发Mac配置为使用服务器上的Git仓库后，提交操作会将代码更改添加到本地仓库。与任何远程Git存储库一样，您还必须执行推送操作以将提交的更改添加到服务器上的仓库。例如，当您在开发Mac上选择`Source Control > Commit`时，选择“Push to remote”选项，在弹出菜单中指定远程存储库，然后单击提交文件和推送。 参见图3-2。
+
   ![图3-2 Pushing commits to a hosted repository](resources/8BD778764EEB878311B1731D1D023B73.png)
 
 ### 添加Git支持到现有Xcode项目

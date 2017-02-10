@@ -27,9 +27,12 @@ Xcode Server在本地网络中通过Bonjour进行通信。如果您和其他团�
 2. 从App Store下载OS X Server。
 3. 下载完成后，在应用程序文件夹或者Launchpad中启动OS X Server应用，简称为`Server`。
 4. 当弹出提示时，在Server设置窗口点击`Continue`开始设置服务器（或者点击`Help`查看详细的设置说明）。
+
   ![server_server_config_window_2x.png](resources/74EF1AF4A6A4E780435438DE8C815E82.png)
+  
 5. 按照屏幕上的说明完成安装。
   当您在Mac上输入管理员账户和密码后，Server应用将会安装所需软件并配置您的Mac作为服务器运行。
+  
   ![server_server_setup_window_2x.png](resources/A6028B7949C082D80DEDB7656FB33069.png)
 
 > **重要**
@@ -58,17 +61,27 @@ Xcode Server在本地网络中通过Bonjour进行通信。如果您和其他团�
 
 1. 启动Server程序（如果没有运行的话）。您可以点击Dock栏的Launchpad图标，然后点击Server应用。
 2. 在Server程序侧边栏的服务列表上选择Xcode。
+
   ![ServicesSidebar_2x.png](resources/FA6F1209716C9E001AFC404522730A50.png)
+  
 3. 点击`Choose Xcode`，选择Xcode。
+
   ![server_choose_xcode_2x.png](resources/D6784BEA74220E669A1EE205C2B7AAF6.png)
+  
   第一次在特定的Mac上开启Xcode Server时，服务器会要求您确定用来执行任务的Xcode版本。如果您需要在之后确定不同的Xcode版本，请再次点击`Choose Xcode`。
+  
   ![server_choose_xcode_again_2x.png](resources/8F71DA8881BD390FBCBF1E5B7CD1AD6E.png)
+  
 4. 选择一个Xcode Server可以用来执行集成的账户。这可以是当前的账户或者可以创建一个新账户。
+
   ![server_existinguseraccount_dialog_2x.png](resources/4B8C94B2F24FA3331CAC70C66A146430.png)
   
   要创建新账户，选择`New user account`并输入全名，账户名和密码。如果需要，可以开启管理员权限。这在执行特定自动化测试时可能是必要的。完成后，点击`Create User`。
+  
   ![server_newuseraccountd_dialog_2x.png](resources/A97E49510F222EF3F54B83C7DBDA800A.png)
+  
 5. 如果所选账户没有登录，请点击`Log In`并且输入账户凭据。Xcode Server要求一个登录账户才能操作。
+
   ![server_loginuser_dialog_2x.png](resources/966B40841389C49BC1BA8D330B99317C.png)
 
   > **备注**
@@ -79,10 +92,12 @@ Xcode Server在本地网络中通过Bonjour进行通信。如果您和其他团�
 
 1. 在Server程序侧边栏的服务列表上选择Xcode。
 2. 点击窗口右上角的打开/关闭开关。
+
   ![server_on_off_switch_2x.png](resources/82230AE7DB6B7410707FD6017C254CCB.png)
   
    当Xcode Server在运行和执行操作时Xcode Server菜单栏按钮会显示。
-    ![xcodeserver_menubar_menu_2x.png](resources/6510F0AB49B50494D4E6FF1437F724F0.png)
+   
+  ![xcodeserver_menubar_menu_2x.png](resources/6510F0AB49B50494D4E6FF1437F724F0.png)
 
 将您的服务器添加到开发帐号中的某个团队，以允许Xcode Server访问您的开发者账户信息，比如provisioning profiles和signing certificates用来构建iOS设备的产品。如果您计划使用Xcode Server来测试iOS产品并在iOS设备上执行性能测试时这是必要的。注意，如果您要将服务器加到团队中您必须是一个管理员或者团队代理人。关于团队角色的信息，参见在[App Distribution Guide](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40012582)中的[Managing Your Developer Account Team](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/ManagingYourTeam/ManagingYourTeam.html#//apple_ref/doc/uid/TP40012582-CH16)。
 
@@ -90,11 +105,17 @@ Xcode Server在本地网络中通过Bonjour进行通信。如果您和其他团�
 
 1. 在Server程序侧边栏的服务列表上选择Xcode。
 2. 在Xcode面板上，单击`Settings`栏。
+
   ![server_xcode_settings_tab_2x.png](resources/2DFDC71A4B899839AEF0FA691194ADBA.png)
+  
 3. 在设置面板，单击`Add Team`。
+
   ![server_xcode_settings_tab_team_2x.png](resources/F8CAF41C319C0344555862583DF4474C.png)
+  
 4. 登录您的Apple ID
+
   ![server_xcode_settings_tab_developerlogin_2x.png](resources/48E6A307600DDA86D33FAFDA72E475CA.png)
+  
 5. 选择一个团队（如果适用），然后单击`Add`。
 
   Server程序会连接到您的开发者账户并且下载您团队注册的应用的证书，私钥，signing identities,和provisioning profiles。
@@ -105,11 +126,16 @@ Xcode Server在本地网络中通过Bonjour进行通信。如果您和其他团�
 
 1. 在Server程序侧边栏的服务列表上选择Xcode。
 2. 在Xcode面板上，单击`Settings`栏。
+
   ![server_xcode_settings_tab_2x.png](resources/2DFDC71A4B899839AEF0FA691194ADBA.png)
+  
 3. 在`Settings`窗口`Access`下，单击`Edit`按钮获取权限。
 4. 选择可以创建和查看bot的成员。
+
   ![BotPermissions_2x.png](resources/E036E165141A531D1C655700D8140AD8.png)
+  
   如果您在`Bots can be created and viewed by`的弹出菜单栏中选择`all users`，游客和每一个经过身份验证的用户都可以查看、创建、编辑和删除bot以及下载项目。`loged in users`包括所有需要经过身份验证才能访问bot的本地用户和目录用户。单击`only some users`允许您指定现有用户或组。
+  
 5. 如果您选择限制bot的创建，您也可以选择限制只可查看bot的访问。只有查看权限的用户可以访问Xcode Server网站（参阅从_Web浏览器监控Bot_:[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/MonitorBotsandDownloadProductsfromaWebBrowser.html#//apple_ref/doc/uid/TP40013292-CH10-SW1),[中文文档](《Xcode Server and Continuous Integration Guide - Monitor Bots from a Web Browser》官方文档中文翻译（七）.md)）并且启动集成，但他们无法创建和管理bot。特别受益于具有只访问bot活动权限的人员是软件测试人员，项目经理和种子协调员。
 6. 单击`OK`。
 
@@ -123,6 +149,7 @@ Xcode Server在本地网络中通过Bonjour进行通信。如果您和其他团�
 3. 单击添加按钮（+），选择Add Server。
 4. 从服务器列表选择服务器或者输入一个服务器地址，然后单击`Next`按钮。
 5. 指定服务器连接凭据，然后单击`Add`。
+
   ![xcode_add_server_2x.png](resources/890DEE6A0B5339EB35BA264C460FBDC8.png)
   
   如果服务器成功配置，您可以单击Xcode中Account首选项的服务器地址链接。Safari将会打开并展现服务器托管的bot网站，正如_Web浏览器监控Bot_:[官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_guide-continuous_integration/MonitorBotsandDownloadProductsfromaWebBrowser.html#//apple_ref/doc/uid/TP40013292-CH10-SW1),[中文文档](《Xcode Server and Continuous Integration Guide - Monitor Bots from a Web Browser》官方文档中文翻译（七）.md)所探讨的。

@@ -22,6 +22,9 @@
 * 管理和监控Bot
   * [从报告导航器管理和监控Bot](6.md)
   * [从Web浏览器监控Bot](7.md)
+* 实践
+  * [已知问题及技巧](4-1.md)
+  * [上传到平台](4-2.md)
 
 ## 译者
 [小小厨师](http://iandrew.space),[简书](http://www.jianshu.com/u/acd83aa0fb88)

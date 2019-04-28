@@ -1,5 +1,9 @@
 # 《Xcode Server and Continuous Integration Guide》中文版
 
+**已废弃**
+新版本Xcode已集成Xcode Server, 只需要打开开关，添加bot就可以了。非常简单方便。
+
+--------
 使用Xcode Server进行持续集成。
 
 [GitBook地址](https://www.gitbook.com/book/andrewmika/-xcode-server-and-continuous-integration-guide/details)

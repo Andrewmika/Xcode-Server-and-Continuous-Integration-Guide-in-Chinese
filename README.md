@@ -1,6 +1,6 @@
 # 《Xcode Server and Continuous Integration Guide》中文版
 
-# 2020更新：
+# 2020更新-最新Xcode Server 教程：
 ## 前言
 
 如果要进行iOS持续集成，最流行的大概是Jenkins，Fastlane。但是目前来看这些配置都比较复杂，而最简单的是使用`Xcode Server`，但是网上资料却比较少。

@@ -205,6 +205,6 @@ xcrun altool --upload-app -f ${XCS_PRODUCT} -u ${USERNAME} -p ${PASSWORD}
   * [上传到平台](4-2.md)
 
 ## 译者
-[小小厨师](http://iandrew.space),[简书](http://www.jianshu.com/u/acd83aa0fb88)
+[小小厨师](http://iandrew.space)
 
 
